@@ -20,14 +20,14 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 	def open(self):
 		print ("WebSocket opened")
 		player_address = ""
-		
+
 		#Get IP and Port from connection context if possible
 		address = self.request.connection.context.address
 		if address:
 			ip = address[0]
 			port = str(address[1])
 			player_address = ip + ":" + port
-		
+
 		#Original method
 		else :
 			ip = self.request.remote_ip
@@ -53,6 +53,14 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 		elif message_type == "signin":
 			self.signin(message_data)
 
+		elif message_type == "redpage":
+			self.redpage(message_data)
+
+
+	#def redpage(self, message_data):
+	#	message_type = user_manager.signin(message_data)
+
+	#	self.send_message(message_type, message_data)
 
 	def signup(self, message_data):
 		message_type = user_manager.signup(message_data)
