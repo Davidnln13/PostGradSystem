@@ -34,6 +34,3 @@ class UserManager:
 		print("message_type:", message_type)
 
 		return message_type
-
-	#def redpage(self,message_data):
-	#	""Returns message type : string"""

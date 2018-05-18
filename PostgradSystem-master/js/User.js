@@ -13,10 +13,7 @@ class User extends Model
         this.email = "";
         this.password = "";
     }
-    // redpage()
-    // {
-    //   app.net.sendMessage("redpage",this.getSerialisedUser());
-    // }
+
     signup(displayName, name, surname, role, supervisorEmail, email, password, passwordConfirm)
     {
         this.displayName = displayName;
@@ -35,6 +32,7 @@ class User extends Model
         }
 
     }
+
     signin(email, password)
     {
         this.email = email;
