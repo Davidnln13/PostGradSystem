@@ -8,11 +8,11 @@ class MessageHandler
 			SIGN_IN_SUCCESSFUL: "signin_successful",
 			SIGN_IN_FAILED: "signin_failed",
 			SIGN_UP_SUCCESSFUL: "signup_successful",
-			SIGN_UP_FAILED: "signup_failed"//,
-		//	RED_PAGE: "redpage"
+			SIGN_UP_FAILED: "signup_failed",
+			RED_PAGE: "redpage"
 		};
 	}
-
+// takes in messages from net.sendmessage
 	handleMessage (message)
 	{
 		console.log("message" + message);
@@ -52,9 +52,9 @@ class MessageHandler
 			alert("These email/profile name are already registered in the system or you have not filled everything.")
 		}
 		//if we get a redpage message we switch to that view
-		// else if(type === app.net.messageHandler.types.RED_PAGE)
-		// {
-		// 	app.viewManager.goToView("redpage");
-		// }
+		else if(type === app.net.messageHandler.types.RED_PAGE)
+		{
+			app.viewManager.goToView("redpage");
+		}
 	}
 }

@@ -53,14 +53,15 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 		elif message_type == "signin":
 			self.signin(message_data)
 
+		#we receive a message with the data we want to save
 		elif message_type == "redpage":
 			self.redpage(message_data)
 
-
-	#def redpage(self, message_data):
-	#	message_type = user_manager.signin(message_data)
-
-	#	self.send_message(message_type, message_data)
+	#send to user manager to be saved in a db	
+	def redpage(self, message_data):
+		message_type = user_manager.redpage(message_data)
+		print("in server")
+		self.send_message(message_type, message_data)
 
 	def signup(self, message_data):
 		message_type = user_manager.signup(message_data)

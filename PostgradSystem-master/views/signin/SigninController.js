@@ -15,7 +15,7 @@ class SigninController
 		signinButton.addEventListener("click", function(){that.signin()} );
 
 		var redpagebutton = document.getElementById("redpage-button");
-		// redpagebutton.addEventListener("click", function(){app.viewManager.goToView("redpage");} );
+		redpagebutton.addEventListener("click", function(){app.viewManager.goToView("redpage");} );
 
 		var signupButton = document.getElementById("signup-link");
 		signupButton.addEventListener("click", function(){app.viewManager.goToView("signup");} );

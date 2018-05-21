@@ -35,5 +35,14 @@ class UserManager:
 
 		return message_type
 
-	#def redpage(self,message_data):
-	#	""Returns message type : string"""
+	def redpage(self,message_data):
+		""""Returns message type : string"""
+
+		try:
+			self.database_manager.insert_into_table("Users", message_data)
+			message_type = "redpage"
+		except:
+			message_type = "redpage"
+
+		print("message_type:", message_type)
+		return message_type

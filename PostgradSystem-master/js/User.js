@@ -13,10 +13,11 @@ class User extends Model
         this.email = "";
         this.password = "";
     }
-    // redpage()
-    // {
-    //   app.net.sendMessage("redpage",this.getSerialisedUser());
-    // }
+    //called from redpage controller passes the saved data which in turn is now passed to net.sendmessage
+    redpage(savedMessage)
+    {
+      app.net.sendMessage("redpage", savedMessage);
+    }
     signup(displayName, name, surname, role, supervisorEmail, email, password, passwordConfirm)
     {
         this.displayName = displayName;

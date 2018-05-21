@@ -46,7 +46,8 @@ class App
 		this.viewManager.addView(new SigninView());
 		this.viewManager.addView(new SignupView());
 		this.viewManager.addView(new HomepageView());
-		//this.viewManager.addView(new RedPageView());
+		//adds a redpage view
+		this.viewManager.addView(new RedPageView());
 
 	}
 
@@ -55,6 +56,7 @@ class App
 		this.signinController = new SigninController(this.user);
 		this.signupController = new SignupController(this.user);
 		this.homepageController = new HomepageController(this.user);
-		//this.redpageController = new RedPageController(this.user);
+		//adds a redpage controller
+		this.redpageController = new RedPageController(this.user);
 	}
 }

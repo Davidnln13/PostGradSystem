@@ -10,8 +10,8 @@ class ViewManager
 		this.VIEW = {
 			SIGNIN: "signin",
 			SIGNUP: "signup",
-			HOMEPAGE: "homepage"//,
-		//	REDPAGE: "redpage"
+			HOMEPAGE: "homepage",
+			REDPAGE: "redpage"
 		}
 	}
 
