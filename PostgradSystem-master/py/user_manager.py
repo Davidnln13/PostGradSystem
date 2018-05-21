@@ -31,7 +31,7 @@ class UserManager:
 		except:
 			message_type = "signup_failed"
 
-		print("message_type:", message_type)
+		print("message_data:",message_data, "message_type:", message_type)
 
 		return message_type
 
@@ -39,10 +39,11 @@ class UserManager:
 		""""Returns message type : string"""
 
 		try:
-			self.database_manager.insert_into_table("Users", message_data)
+			self.database_manager.insert_into_table("SavedMessages", message_data)
 			message_type = "redpage"
 		except:
 			message_type = "redpage"
 
-		print("message_type:", message_type)
+		print("message_data:", message_data, "message_type:", message_type)
+
 		return message_type
