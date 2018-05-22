@@ -5,6 +5,7 @@ class RedPageController
 	{
 		this.model = model;
 		this.setup();
+	
 	}
 
 	setup()
