@@ -8,16 +8,16 @@ class Tracker
     }
     logThis()
     {
-      console.log("at " + this.format(this.time) + " User pressed " + this.name + " which is of type " + this.type);
+      console.log("at " + this.format_date(this.time) + " User pressed " + this.name + " which is of type " + this.type);
     }
     logAll(trackArr)
     {
       for (var i = 0; i < trackArr.length; i++)
       {
-        console.log("at " + this.format(trackArr[i].time) + " User pressed " + trackArr[i].name + " which is of type " + trackArr[i].type);
+        console.log("at " + this.format_date(trackArr[i].time) + " User pressed " + trackArr[i].name + " which is of type " + trackArr[i].type);
       }
     }
-    format(d)
+    format_date(d)
     {
      var dformat;
       dformat = [d.getMonth()+1,

@@ -1,15 +1,35 @@
 var app;
+//array to hold trackers
+var trackers = [];
+//initial set up of base tracker
+var tracker = new Tracker("1","2","3");
 
 function main()
 {
 	app = new App();
 }
-
+function track(element)
+{
+	if(element === "document")
+	{
+		console.log("user clicked randomly on the screen");
+	}
+	else
+	{
+		//makes a new tracker of the elements details pushes it to the array and logs it in the console
+		tracker = new Tracker(document.getElementById(element).id, new Date(), document.getElementById(element).nodeName);
+		trackers.push(tracker);
+		tracker.logThis();
+	}
+}
 /**ProjectOrganiser**/
 class App
 {
+
  	constructor()
  	{
+		//adds click event to entire document
+	  document.addEventListener("mousedown",function(){track("document")});
 		this.net = new Net();
 
 		this.viewManager= new ViewManager();
@@ -32,7 +52,6 @@ class App
 
 		this.net.setHost(location.hostname,8080);
 		this.net.connect();
-
 		//add views
 		this.setupViews();
 		//add controllers

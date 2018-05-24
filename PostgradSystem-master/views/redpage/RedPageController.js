@@ -5,7 +5,7 @@ class RedPageController
 	{
 		this.model = model;
 		this.setup();
-	
+
 	}
 
 	setup()
@@ -13,8 +13,11 @@ class RedPageController
 		var that = this;
 
 		var saveButton = document.getElementById("save-button");
-
 		saveButton.addEventListener("click", function(){that.redpage()} );
+		saveButton.addEventListener("click", function(){track("save_button")} );
+
+		var saved = document.getElementById("redpage-name")
+		saved.addEventListener("click", function(){track("redpage-name")} );
 	}
 
 	redpage(e)
